@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Recipes — CookSimple</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <div class="container">
+    <header class="header">
+      <a class="brand" href="index.html">
+        <div class="logo">CS</div>
+        <div>
+          <strong>CookSimple</strong>
+          <div class="small">Recipes</div>
+        </div>
+      </a>
+
+      <nav id="mainNav" class="nav" role="navigation" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="background.html">Basics</a>
+        <a href="recipes.html">Recipes</a>
+        <a href="activity.html">Activity</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+
+      <button id="hamburgerBtn" class="hamburger" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    </header>
+
+    <main id="main">
+      <section class="hero-card" style="margin-bottom:1rem">
+        <h1>Simple Recipes</h1>
+        <p class="lead">Search or filter to find what you want. Click a recipe for details.</p>
+      </section>
+
+      <section class="card">
+        <div class="form-row" aria-label="Filter recipes">
+          <div style="flex:1">
+            <label for="recipeSearch">Search recipes</label>
+            <input id="recipeSearch" type="search" placeholder="e.g. egg, rice">
+          </div>
+
+          <div>
+            <label for="recipeCategory">Category</label>
+            <select id="recipeCategory">
+              <option value="">All</option>
+              <option value="breakfast">Breakfast</option>
+              <option value="stirfry">Stir-fry</option>
+              <option value="salad">Salad</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <section class="grid" style="margin-top:1rem" aria-live="polite">
+        <article class="card recipe-card" data-title="Tomato and Egg Stir" data-tags="breakfast,stirfry,tomato,egg">
+          <div class="recipe">
+            <img src="https://www.seriouseats.com/thmb/2TrsnNbNNB1phUuRBD94JnNtCWk=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/20240305-SEA-HamandCheese-Amanda-Suarez-herojpg-5f7304ba4a7e43018052d2056495c266.jpg">
+            <div>
+              <h3>Ham and Cheese Sandwhich</h3>
+              <div class="meta">Prep: 10 min • Cook: 5 min</div>
+              <p class="small">Hot and melty ham and cheese!</p>
+              <p><button class="btn" onclick="document.getElementById('r1').scrollIntoView()">Open</button></p>
+            </div>
+          </div>
+        </article>
+
+        <article class="card recipe-card" data-title="Simple Fried Rice" data-tags="stirfry,rice,vegetarian">
+          <div class="recipe">
+            <img src="https://www.everydayeasyeats.com/wp-content/uploads/2016/06/Chinese-Fried-Rice-2.jpg" alt="Fried rice illustration">
+            <div>
+              <h3>Simple Fried Rice</h3>
+              <div class="meta">Prep: 8 min • Cook: 10 min</div>
+              <p class="small">Simple and quick!</p>
+              <p><button class="btn" onclick="document.getElementById('r2').scrollIntoView()">Open</button></p>
+            </div>
+          </div>
+        </article>
+
+        <article class="card recipe-card" data-title="Chickpea Salad" data-tags="salad,vegan,quick">
+          <div class="recipe">
+            <img src="https://jessicainthekitchen.com/wp-content/uploads/2021/06/Mediterrean-Chickpea-Salad01972.jpg" alt="Salad illustration">
+            <div>
+              <h3>Chickpea Salad</h3>
+              <div class="meta">Prep: 10 min • No cooking</div>
+              <p class="small">Protein-rich, toss and serve.</p>
+              <p><button class="btn" onclick="document.getElementById('r3').scrollIntoView()">Open</button></p>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section style="margin-top:1rem">
+        <div id="r1" class="card" tabindex="-1">
+          <h3>Ham and Cheese Sandwhich — recipe</h3>
+          <h4>Ingredients</h4>
+          <ul>
+            <li>4 thick crusty bread</li>
+            <li>2 tbsp myonnaise or unsalted butter, divided</li>
+            <li>2 tbsp Dijion mustard</li>
+            <li>8 thin slices ounces Swiss or cheddar cheese</li>
+            <li>6 ounces of thinly sliced ham</li>
+          </ul>
+
+          <h4>Steps</h4>
+          <ol>
+            <li>Place bread and add mayonnaise.</li>
+            <li>Add ham and cheese in between.</li>
+            <li>Heat over pan until golden brown.</li>
+          </ol>
+        </div>
+
+        <div id="r2" class="card" tabindex="-1" style="margin-top:1rem">
+          <h3>Simple Fried Rice</h3>
+          <h4>Ingredients</h4>
+          <ul>
+            <li>2 cups cooked rice</li>
+            <li>1 cup mixed vegetables</li>
+            <li>2 tbsp soy sauce</li>
+          </ul>
+
+          <h4>Steps</h4>
+          <ol>
+            <li>Scramble eggs, set aside.</li>
+            <li>Stir-fry vegetables, add rice & soy sauce.</li>
+            <li>Add eggs together with previous ingredients and fry well.</li>
+          </ol>
+        </div>
+
+        <div id="r3" class="card" tabindex="-1" style="margin-top:1rem">
+          <h3>Chickpea Salad</h3>
+          <h4>Ingredients</h4>
+          <ul>
+            <li>1 can chickpeas</li>
+            <li>½ cucumber, chopped</li>
+            <li>Olive oil, lemon, salt, pepper</li>
+          </ul>
+
+          <h4>Steps</h4>
+          <ol>
+            <li>Toss everything together, stir and serve.</li>
+          </ol>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="small">References: Serious Eats</div>
+      <div class="small"><a href="index.html">Back to Home</a></div>
+    </footer>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

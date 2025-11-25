@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Activity — CookSimple</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <div class="container">
+    <header class="header">
+      <a class="brand" href="index.html"><div class="logo">CS</div><div><div style="font-weight:700">Cook Simple</div><div class="small">Activity</div></div></a>
+      <nav id="mainNav" class="nav" role="navigation" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="background.html">Basics</a>
+        <a href="recipes.html">Recipes</a>
+        <a href="activity.html">Activity</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+      <button id="hamburgerBtn" class="hamburger" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    </header>
+
+    <main id="main">
+      <section class="hero-card">
+        <h1>Interactive kitchen activities</h1>
+        <p class="lead">Use the timer while you cook, or try the mini quiz below to test your knowledge.</p>
+      </section>
+
+      <section class="card" style="margin-top:1rem" aria-labelledby="timerTitle">
+        <h3 id="timerTitle">Simple kitchen timer</h3>
+        <p class="small">Enter minutes and press Start.</p>
+        <div class="form-row">
+          <label for="timerMinutes">Minutes</label>
+          <input id="timerMinutes" type="number" min="0" value="5" aria-label="Timer minutes">
+          <button id="timerStart" class="btn">Start</button>
+          <button id="timerPause" class="btn secondary">Pause</button>
+          <button id="timerReset" class="btn secondary">Reset</button>
+        </div>
+        <p class="timer-display" id="timerDisplay">00:00</p>
+        <p id="timerAlert" class="small" aria-live="assertive" role="status"></p>
+      </section>
+
+      <section class="card" style="margin-top:1rem" aria-labelledby="quizTitle">
+        <h3 id="quizTitle">Mini quiz</h3>
+        <p class="small">A quick 3-question quiz about basic cooking safety.</p>
+        <form id="quizForm" onsubmit="return false;">
+          <ol>
+            <li>
+              <label>When handling raw chicken, you should:</label>
+              <div><label><input type="radio" name="q1" value="a"> Use the same cutting board for vegetables</label></div>
+              <div><label><input type="radio" name="q1" value="b"> Use a separate board and wash hands</label></div>
+            </li>
+            <li>
+              <label>What is mincing?</label>
+              <div><label><input type="radio" name="q2" value="a"> Cutting food into tiny pieces</label></div>
+              <div><label><input type="radio" name="q2" value="b"> Seasoning food</label></div>
+            </li>
+            <li>
+              <label>Grease fire — the recommended immediate action is:</label>
+              <div><label><input type="radio" name="q3" value="a"> Throw water</label></div>
+              <div><label><input type="radio" name="q3" value="b"> Turn off heat and cover pan with a lid</label></div>
+            </li>
+          </ol>
+          <p><button id="checkQuiz" class="btn">Check answers</button></p>
+          <div id="quizResult" class="small" aria-live="polite"></div>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="small">Try timing a recipe from the Recipes page while following steps.</div>
+      <div class="small">Back to <a href="index.html">home</a></div>
+    </footer>
+  </div>
+
+  <script>
+  
+  document.getElementById('checkQuiz').addEventListener('click', function(){
+    const answers = {q1:'b', q2:'a', q3:'b'};
+    let score = 0;
+    Object.keys(answers).forEach(k=>{
+      const val = (document.querySelector('input[name="'+k+'"]:checked') || {}).value;
+      if(val === answers[k]) score++;
+    });
+    const result = document.getElementById('quizResult');
+    result.textContent = 'You got ' + score + ' / 3 correct.';
+  });
+  </script>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
